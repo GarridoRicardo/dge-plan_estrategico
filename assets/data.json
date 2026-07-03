@@ -1,0 +1,126 @@
+{
+  "plan": "Planeamiento Estrategico InBeck SRL",
+  "horizonte": "Agosto 2026 - Julio 2027",
+  "ejes": [
+    {
+      "id": "eje1",
+      "nombre": "Eje 1 - Diversificacion de clientes y servicios",
+      "color": "#39bdf8",
+      "objetivo": "Incorporar al menos 2 nuevos clientes (operadoras o contratistas EPC) fuera de YPF para diciembre de 2027, de modo que ningun cliente represente mas del 70% de la facturacion anual.",
+      "iniciativas": [
+        {
+          "codigo": "1.1", "nombre": "Plan comercial activo", "responsable": "Ricardo Garrido", "prioridad": "Alta",
+          "inicio": "2026-08-01", "fin": "2027-07-31", "estado": "En Ejecucion",
+          "descripcion": "Disenar e implementar un plan comercial sistematico para identificar y postularse a licitaciones de operadoras y contratistas EPC distintos de YPF activos en la Cuenca Neuquina.",
+          "resultados_esperados": "Al menos 2 nuevas licitaciones ganadas fuera de YPF; base de datos de clientes potenciales actualizada.",
+          "recursos": "Financieros: medio; RRHH: estructura actual; Tecnologicos: no",
+          "acciones": [
+            {"accion": "Relevar operadoras/EPC activas y mapear procesos de licitacion", "responsable": "R. Garrido", "inicio": "2026-08-01", "fin": "2026-08-31"},
+            {"accion": "Elaborar portfolio institucional y material de presentacion", "responsable": "R. Garrido", "inicio": "2026-08-01", "fin": "2026-08-31"},
+            {"accion": "Inscribirse como proveedor calificado en 3+ operadoras/EPC nuevas", "responsable": "D. Beckmann", "inicio": "2026-09-01", "fin": "2026-10-31"},
+            {"accion": "Presentarse a 4+ licitaciones/ano fuera de YPF", "responsable": "D. Beckmann", "inicio": "2026-11-01", "fin": "2027-07-31"},
+            {"accion": "Seguimiento comercial post-presentacion y ajuste de estrategia", "responsable": "R. Garrido", "inicio": "2026-11-01", "fin": "2027-07-31"}
+          ]
+        },
+        {
+          "codigo": "1.2", "nombre": "Ampliacion del portafolio de servicios", "responsable": "Daniel Beckmann", "prioridad": "Media",
+          "inicio": "2026-09-01", "fin": "2027-02-28", "estado": "Programado",
+          "descripcion": "Evaluar e incorporar nuevos servicios (geotecnicos/ambientales complementarios) aprovechando equipamiento y capacidades tecnicas ya instaladas.",
+          "resultados_esperados": "Al menos 1 nuevo servicio incorporado a la oferta comercial de InBeck.",
+          "recursos": "Financieros: medio-alto; RRHH: si (capacitacion); Tecnologicos: posible",
+          "acciones": [
+            {"accion": "Analizar demanda de servicios complementarios", "responsable": "D. Beckmann", "inicio": "2026-09-01", "fin": "2026-09-30"},
+            {"accion": "Evaluar factibilidad tecnica/inversion de 2-3 candidatos", "responsable": "D. Beckmann", "inicio": "2026-10-01", "fin": "2026-10-31"},
+            {"accion": "Capacitar al equipo tecnico en el/los servicios seleccionados", "responsable": "R. Garrido", "inicio": "2026-11-01", "fin": "2026-12-31"},
+            {"accion": "Realizar piloto del nuevo servicio en un proyecto real", "responsable": "D. Beckmann", "inicio": "2027-01-01", "fin": "2027-01-31"},
+            {"accion": "Incorporacion formal a la oferta comercial", "responsable": "A. Beckmann", "inicio": "2027-02-01", "fin": "2027-02-28"}
+          ]
+        },
+        {
+          "codigo": "1.3", "nombre": "Fortalecimiento de la presencia institucional", "responsable": "Daniel Beckmann", "prioridad": "Media",
+          "inicio": "2026-08-01", "fin": "2026-12-31", "estado": "En Ejecucion",
+          "descripcion": "Mejorar la visibilidad de InBeck ante potenciales clientes mediante presencia institucional actualizada y participacion activa en camaras/clusters del sector.",
+          "resultados_esperados": "Sitio web actualizado; participacion activa en al menos 1 camara/cluster (CEIPA, Cluster Vaca Muerta).",
+          "recursos": "Financieros: bajo-medio; RRHH: no; Tecnologicos: si (web)",
+          "acciones": [
+            {"accion": "Actualizar sitio web con portfolio de proyectos y servicios", "responsable": "R. Garrido", "inicio": "2026-08-01", "fin": "2026-08-31"},
+            {"accion": "Activar participacion en camaras del sector (CEIPA/Cluster VM)", "responsable": "A. Beckmann", "inicio": "2026-09-01", "fin": "2026-09-30"},
+            {"accion": "Elaborar material de casos de exito y proyectos destacados", "responsable": "D. Beckmann", "inicio": "2026-10-01", "fin": "2026-10-31"},
+            {"accion": "Participar en 2+ eventos/jornadas del sector", "responsable": "R. Garrido", "inicio": "2026-11-01", "fin": "2026-12-31"}
+          ]
+        },
+        {
+          "codigo": "1.4", "nombre": "Sistematizacion de rentabilidad por contrato", "responsable": "Ricardo Garrido", "prioridad": "Alta",
+          "inicio": "2026-08-01", "fin": "2026-11-30", "estado": "Pendiente",
+          "descripcion": "Sistematizar en RIA los datos de certificacion y facturacion del contrato de Agrimensura (hoy sin registro sistematico), para contar con informacion de rentabilidad por contrato que sustente decisiones comerciales.",
+          "resultados_esperados": "100% de los proyectos de Agrimensura cargados y certificados en RIA; reporte de rentabilidad por contrato disponible.",
+          "recursos": "Financieros: bajo; RRHH: no; Tecnologicos: si (RIA)",
+          "acciones": [
+            {"accion": "Relevar y cargar en RIA el historial de proyectos de Agrimensura", "responsable": "R. Garrido", "inicio": "2026-08-01", "fin": "2026-09-30"},
+            {"accion": "Definir el circuito de carga de certificacion para nuevos proyectos", "responsable": "R. Garrido", "inicio": "2026-10-01", "fin": "2026-10-31"},
+            {"accion": "Generar reporte comparativo de rentabilidad Agrimensura vs. Riesgo Hidrico", "responsable": "D. Beckmann", "inicio": "2026-11-01", "fin": "2026-11-30"}
+          ]
+        }
+      ]
+    },
+    {
+      "id": "eje2",
+      "nombre": "Eje 2 - Fortalecimiento de SGSST/calidad y digitalizacion",
+      "color": "#fb7185",
+      "objetivo": "Certificar el Sistema de Gestion de SST bajo ISO 45001 y consolidar el 100% de la gestion de proyectos en el sistema propio RIA para diciembre de 2026, eliminando los sistemas paralelos no automatizados.",
+      "iniciativas": [
+        {
+          "codigo": "2.1", "nombre": "Certificacion ISO 45001", "responsable": "Roger Luna Pinto", "prioridad": "Alta",
+          "inicio": "2026-08-01", "fin": "2026-12-31", "estado": "Revision",
+          "descripcion": "Completar la implementacion del SGSST conforme a ISO 45001:2018 y gestionar la auditoria de certificacion externa.",
+          "resultados_esperados": "Certificacion ISO 45001 obtenida.",
+          "recursos": "Financieros: medio-alto (honorarios certificadora); RRHH: no; Tecnologicos: no",
+          "acciones": [
+            {"accion": "Auditoria interna de brechas respecto a ISO 45001", "responsable": "R. Luna Pinto", "inicio": "2026-08-01", "fin": "2026-08-31"},
+            {"accion": "Cierre de no conformidades detectadas", "responsable": "J. Piergentili", "inicio": "2026-09-01", "fin": "2026-10-31"},
+            {"accion": "Seleccion y contratacion de organismo certificador", "responsable": "D. Beckmann", "inicio": "2026-11-01", "fin": "2026-11-30"},
+            {"accion": "Auditoria externa de certificacion", "responsable": "R. Luna Pinto", "inicio": "2026-12-01", "fin": "2026-12-31"}
+          ]
+        },
+        {
+          "codigo": "2.2", "nombre": "Fortalecimiento de la cultura de seguridad", "responsable": "Roger Luna Pinto", "prioridad": "Alta",
+          "inicio": "2026-08-01", "fin": "2026-12-31", "estado": "Revision",
+          "descripcion": "Atacar las brechas ya identificadas en el FODA de SST (comunicacion interna, ergonomia, EPP, comite de seguridad) mediante un plan de comunicacion y participacion.",
+          "resultados_esperados": "Comite de SST constituido y en funcionamiento; canal de comunicacion interna de SST activo.",
+          "recursos": "Financieros: bajo; RRHH: si; Tecnologicos: no",
+          "acciones": [
+            {"accion": "Constituir el comite de SST con representacion de todos los niveles", "responsable": "R. Luna Pinto", "inicio": "2026-08-01", "fin": "2026-08-31"},
+            {"accion": "Implementar boletin/canal digital de comunicacion de SST", "responsable": "J. Piergentili", "inicio": "2026-09-01", "fin": "2026-09-30"},
+            {"accion": "Realizar evaluaciones ergonomicas en los puestos de trabajo", "responsable": "R. Luna Pinto", "inicio": "2026-10-01", "fin": "2026-11-30"},
+            {"accion": "Capacitar al personal en procedimientos actualizados de SST", "responsable": "R. Luna Pinto", "inicio": "2026-12-01", "fin": "2026-12-31"}
+          ]
+        },
+        {
+          "codigo": "2.3", "nombre": "Despliegue completo del sistema RIA", "responsable": "Ricardo Garrido", "prioridad": "Alta",
+          "inicio": "2026-08-01", "fin": "2026-11-30", "estado": "Aprobado",
+          "descripcion": "Extender el uso de RIA a la totalidad de los procesos de gestion, Gantt y certificacion, incluyendo el contrato de Agrimensura, eliminando sistemas paralelos.",
+          "resultados_esperados": "100% de los proyectos activos gestionados en RIA.",
+          "recursos": "Financieros: bajo; RRHH: no; Tecnologicos: si",
+          "acciones": [
+            {"accion": "Relevar procesos aun gestionados fuera de RIA", "responsable": "J. Piergentili", "inicio": "2026-08-01", "fin": "2026-08-15"},
+            {"accion": "Migrar e incorporar dichos procesos al sistema", "responsable": "R. Garrido", "inicio": "2026-08-16", "fin": "2026-09-30"},
+            {"accion": "Capacitar a los usuarios internos en el uso completo de RIA", "responsable": "J. Piergentili", "inicio": "2026-10-01", "fin": "2026-10-31"},
+            {"accion": "Discontinuar los sistemas paralelos", "responsable": "D. Beckmann", "inicio": "2026-11-01", "fin": "2026-11-30"}
+          ]
+        },
+        {
+          "codigo": "2.4", "nombre": "Formalizacion de criterios de proveedores", "responsable": "Daniel Beckmann", "prioridad": "Media",
+          "inicio": "2026-09-01", "fin": "2026-11-30", "estado": "Pendiente",
+          "descripcion": "Definir criterios formales de evaluacion, homologacion y seguimiento de proveedores y subcontratistas (ej. TECHLINKED), dado que hoy no existe una politica formal.",
+          "resultados_esperados": "Procedimiento de evaluacion de proveedores documentado y aplicado.",
+          "recursos": "Financieros: bajo; RRHH: no; Tecnologicos: no",
+          "acciones": [
+            {"accion": "Definir criterios de evaluacion tecnicos, SST y de calidad", "responsable": "R. Luna Pinto", "inicio": "2026-09-01", "fin": "2026-09-30"},
+            {"accion": "Documentar el procedimiento de homologacion de proveedores", "responsable": "D. Beckmann", "inicio": "2026-10-01", "fin": "2026-10-31"},
+            {"accion": "Evaluar formalmente a proveedores/subcontratistas actuales", "responsable": "D. Beckmann", "inicio": "2026-11-01", "fin": "2026-11-30"}
+          ]
+        }
+      ]
+    }
+  ]
+}

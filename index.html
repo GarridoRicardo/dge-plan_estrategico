@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InBeck SRL — Plan Estratégico · Gantt</title>
+<style>
+:root{--bg:#0e1626;--panel:#172033;--panel2:#202c44;--line:#2c3a55;--txt:#e6edf6;--muted:#93a2bb;--accent:#39bdf8;--red:#fb7185;--amber:#f59e0b;--green:#34d399;--purple:#7c5cc4;--lw:290px;}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);font-size:14px}
+header{background:linear-gradient(90deg,#0e1626,#172033);padding:14px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+header img{height:38px;border-radius:6px;background:#fff;padding:3px}
+header h1{font-size:17px;margin:0;font-weight:700}
+header p{margin:2px 0 0;color:var(--muted);font-size:12px}
+.spacer{flex:1}
+.stat{text-align:right}
+.stat b{display:block;font-size:18px;color:var(--accent)}
+.stat span{font-size:11px;color:var(--muted)}
+main{padding:22px;max-width:1400px;margin:0 auto}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;font-size:12px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.eje-block{margin-bottom:26px}
+.eje-title{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+.eje-bar{width:5px;height:20px;border-radius:3px}
+.eje-title h2{font-size:15px;margin:0}
+.eje-obj{color:var(--muted);font-size:12.5px;margin:0 0 12px;max-width:900px}
+.gantt{overflow-x:auto;background:var(--bg);border:1px solid var(--line);border-radius:10px}
+.grow{display:grid;grid-template-columns:var(--lw) 1fr;border-bottom:1px solid var(--line)}
+.grow:last-child{border-bottom:none}
+.gname{padding:12px 14px;font-size:13px;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:center;gap:2px}
+.gname b{font-size:13px}
+.gname small{color:var(--muted);font-size:11px}
+.gtrack{position:relative;min-width:900px;padding:10px 0}
+.gtrack .grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(12,1fr)}
+.gtrack .grid div{border-right:1px solid var(--line)}
+.gbar{position:absolute;top:10px;height:22px;border-radius:6px;display:flex;align-items:center;padding:0 10px;font-size:11px;font-weight:700;color:#06283d;white-space:nowrap;overflow:hidden;cursor:pointer}
+.axis{display:grid;grid-template-columns:var(--lw) 1fr;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--panel);z-index:2}
+.axis .corner{padding:10px 14px;font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;border-right:1px solid var(--line)}
+.axis .months{display:grid;grid-template-columns:repeat(12,1fr);min-width:900px}
+.axis .months div{padding:10px 6px;font-size:11px;color:var(--muted);border-right:1px solid var(--line)}
+.detail{margin-top:6px;padding:14px 16px;background:var(--panel);border-radius:8px;font-size:12.5px;color:var(--muted);display:none}
+.detail.open{display:block}
+.detail b{color:var(--txt)}
+.detail table{width:100%;border-collapse:collapse;margin-top:10px;font-size:12px}
+.detail th,.detail td{text-align:left;padding:6px 8px;border-bottom:1px solid var(--line)}
+.detail th{color:var(--muted);font-weight:600}
+footer{padding:20px 22px;color:var(--muted);font-size:11.5px;text-align:center}
+</style>
+</head>
+<body>
+<header>
+  <img src="assets/logo-inbeck.png" alt="InBeck SRL">
+  <div>
+    <h1>Plan estratégico InBeck SRL</h1>
+    <p id="horizonte">Cargando…</p>
+  </div>
+  <div class="spacer"></div>
+  <div class="stat"><b>2</b><span>ejes estratégicos</span></div>
+  <div class="stat"><b>8</b><span>iniciativas</span></div>
+</header>
+<main>
+  <div class="legend">
+    <span><span class="dot" style="background:#94a3b8"></span>Pendiente</span>
+    <span><span class="dot" style="background:#a78bfa"></span>Programado</span>
+    <span><span class="dot" style="background:#38bdf8"></span>En ejecución</span>
+    <span><span class="dot" style="background:#818cf8"></span>Revisión</span>
+    <span><span class="dot" style="background:#34d399"></span>Aprobado</span>
+  </div>
+  <div id="ejes"></div>
+</main>
+<footer>Generado a partir de la planificación estratégica InBeck SRL — Diplomatura en Gerenciamiento, Módulo II. Datos en <code>assets/data.json</code>.</footer>
+
+<script>
+const QCOL = {
+  'Pendiente':'#94a3b8','Programado':'#a78bfa','En Ejecución':'#38bdf8',
+  'Revisión':'#818cf8','Aprobado':'#34d399','Facturado':'#2dd4bf','Finalizado':'#10b981'
+};
+const MESES = ["Ago-26","Sep-26","Oct-26","Nov-26","Dic-26","Ene-27","Feb-27","Mar-27","Abr-27","May-27","Jun-27","Jul-27"];
+const T0 = new Date(2026,7,1); // 1 ago 2026
+function monthsBetween(a,b){const d1=new Date(a),d2=new Date(b);return (d2.getFullYear()-d1.getFullYear())*12+(d2.getMonth()-d1.getMonth())+(d2.getDate()>15?1:0);}
+function offsetMonths(d){const dt=new Date(d);return (dt.getFullYear()-T0.getFullYear())*12+(dt.getMonth()-T0.getMonth());}
+
+fetch('assets/data.json').then(r=>r.json()).then(data=>{
+  document.getElementById('horizonte').textContent = data.horizonte;
+  const cont = document.getElementById('ejes');
+  data.ejes.forEach(eje=>{
+    const block = document.createElement('div');
+    block.className='eje-block';
+    block.innerHTML = `
+      <div class="eje-title"><span class="eje-bar" style="background:${eje.color}"></span><h2>${eje.nombre}</h2></div>
+      <p class="eje-obj"><b style="color:var(--txt)">Objetivo:</b> ${eje.objetivo}</p>
+      <div class="axis">
+        <div class="corner">Iniciativa</div>
+        <div class="months">${MESES.map(m=>`<div>${m}</div>`).join('')}</div>
+      </div>
+      <div class="gantt" id="g-${eje.id}"></div>
+    `;
+    cont.appendChild(block);
+    const g = block.querySelector(`#g-${eje.id}`);
+    eje.iniciativas.forEach((it,idx)=>{
+      const start = offsetMonths(it.inicio);
+      const dur = Math.max(1, monthsBetween(it.inicio, it.fin));
+      const row = document.createElement('div');
+      row.className='grow';
+      row.innerHTML = `
+        <div class="gname"><b>${it.codigo} ${it.nombre}</b><small>${it.responsable} · ${it.prioridad}</small></div>
+        <div class="gtrack">
+          <div class="grid">${MESES.map(()=>`<div></div>`).join('')}</div>
+          <div class="gbar" style="left:calc(${start}/12*100%);width:calc(${dur}/12*100%);background:${QCOL[it.estado]||'#39bdf8'}">${it.estado}</div>
+        </div>`;
+      const bar = row.querySelector('.gbar');
+      const detailId = `detail-${eje.id}-${idx}`;
+      bar.addEventListener('click', ()=>{
+        let d = document.getElementById(detailId);
+        if(d){ d.classList.toggle('open'); return; }
+        d = document.createElement('div');
+        d.id = detailId;
+        d.className='detail open';
+        d.innerHTML = `
+          <p><b>Descripción:</b> ${it.descripcion}</p>
+          <p><b>Resultados esperados:</b> ${it.resultados_esperados}</p>
+          <p><b>Recursos:</b> ${it.recursos}</p>
+          <table><thead><tr><th>#</th><th>Acción</th><th>Responsable</th><th>Inicio – Fin</th></tr></thead>
+          <tbody>${it.acciones.map((a,i)=>`<tr><td>${i+1}</td><td>${a.accion}</td><td>${a.responsable}</td><td>${a.inicio} – ${a.fin}</td></tr>`).join('')}</tbody></table>
+        `;
+        row.after(d);
+      });
+      g.appendChild(row);
+    });
+  });
+});
+</script>
+</body>
+</html>
